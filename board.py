@@ -6,7 +6,7 @@ from set import Set
 
 
 class Board:
-    def __init__(self, self.rows=3, self.columns=3):
+    def __init__(self, rows=3, columns=3):
         ''' Board class
         Manages the cards on the board, the unplayed cards, and can retrieve properties such
         as the number of sets on the board. 
