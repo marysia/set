@@ -13,14 +13,14 @@ g■■ 	b▣  	r●●
 ~~~~
 
 Example of a set on this board: `r■■■ b■■ , g■` (same shape, same fill, different counts, different colors.)
-###Usage ###
+### Usage ###
 `python3 play.py`
 
 Play options:
 
-* set: to enter a set in tuple format; e.g. `(1, 2), (1, 0), (0, 0)`
-* redraw: redraw the current board; all current cards on the board are replaced.
-* info: report number of available sets; in this case 2. 
-* hint: get a hint; e.g. `b■■` 
-* status: report current game status in terms of sets found, time passed, hints requested, etc. 
-* quit: exit the game.
+* _set_: to enter a set in tuple format; e.g. `(1, 2), (1, 0), (0, 0)`
+* _redraw_: redraw the current board; all current cards on the board are replaced.
+* _info_: report number of available sets; in this case 2. 
+* _hint_: get a hint; e.g. `b■■` 
+* _status_: report current game status in terms of sets found, time passed, hints requested, etc. 
+* _quit_: exit the game.
