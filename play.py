@@ -2,7 +2,7 @@ import numpy as np
 import random
 import ast
 import time
-from collections import defaultdict
+from collections import defaultdict, namedtuple
 
 from set import Set
 from board import Board
@@ -16,13 +16,14 @@ class Game:
         and time passed.
         '''
         # input options
+        Option = namedtuple('Option', 'function help')
         self.options = {
-            'set': (self.enter_sets, 'to enter a set.'),
-            'redraw': (self.redraw_board, 'redraw the current board.'),
-            'info': (self.report_sets, 'report number of available sets.'),
-            'hint': (self.report_hint, 'get a hint.'),
-            'status': (self.report_status, 'report current game status.'),
-            'quit': (self.quit, 'exit the game.')
+            'set': Option(self.enter_sets, 'to enter a set.'),
+            'redraw': Option(self.redraw_board, 'redraw the current board.'),
+            'info': Option(self.report_sets, 'report number of available sets.'),
+            'hint': Option(self.report_hint, 'get a hint.'),
+            'status': Option(self.report_status, 'report current game status.'),
+            'quit': Option(self.quit, 'exit the game.')
         }
 
         # manage game variables
@@ -53,8 +54,7 @@ class Game:
 
         # print remaining cards
         if not self.exit:
-            print(
-                f'There are {len(self.board.unplayed_cards)} unplayed cards left.')
+            print(f'There are {len(self.board.unplayed_cards)} unplayed cards left.')
 
     def report_sets(self):
         ''' Report number of available sets on the current board. '''
@@ -98,8 +98,8 @@ class Game:
     def play_options(self):
         ''' Print play options based on self.options. '''
         play_options_string = 'Play options: \n'
-        for key, (_, information) in self.options.items():
-            play_options_string += f'\t - {key}: {information}\n'
+        for action, properties in self.options.items():
+            play_options_string += f'\t - {action}: {properties.help}\n'
         print(play_options_string)
 
     def quit(self):
@@ -166,7 +166,7 @@ class Game:
         # Parse user input based on the options.
         move = self.options.get(userinput)
         # Execute corresponding method
-        move[0]() if move is not None else print('Unknown input.')
+        move.function() if move is not None else print('Unknown input.')
 
 
 if __name__ == "__main__":
