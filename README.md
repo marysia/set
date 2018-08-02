@@ -18,9 +18,9 @@ Example of a set on this board: `r■■■ b■■ , g■` (same shape, same fi
 
 Play options:
 
-	* set: to enter a set in tuple format; e.g. (1, 2), (1, 0), (0, 0)
-	 * redraw: redraw the current board; all current cards on the board are replaced.
-	 * info: report number of available sets; in this case 2. 
-	 * hint: get a hint; e.g. b■■ 
-	 * status: report current game status in terms of sets found, time passed, hints requested, etc. 
-	 * quit: exit the game.
+* set: to enter a set in tuple format; e.g. (1, 2), (1, 0), (0, 0)
+* redraw: redraw the current board; all current cards on the board are replaced.
+* info: report number of available sets; in this case 2. 
+* hint: get a hint; e.g. b■■ 
+* status: report current game status in terms of sets found, time passed, hints requested, etc. 
+* quit: exit the game.
